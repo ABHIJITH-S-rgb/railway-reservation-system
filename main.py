@@ -2,6 +2,10 @@ TOTAL_SEATS = 50
 available_seats = list(range(1, TOTAL_SEATS + 1))
 bookings = {}
 
+def check_availability():
+    print("Available Seats:", len(available_seats))
+    print("Seat Numbers:", available_seats)
+
 def menu():
     while True:
         print("\n===== Railway Reservation System =====")
@@ -12,9 +16,9 @@ def menu():
         print("5. Exit")
 
         choice = input("Enter your choice: ")
-
+        
         if choice == "1":
-            print("Coming soon...")
+            check_availability()
         elif choice == "2":
             print("Coming soon...")
         elif choice == "3":
