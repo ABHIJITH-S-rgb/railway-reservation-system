@@ -41,6 +41,21 @@ def view_ticket():
     else:
         print("Booking not found!")
 
+def cancel_ticket():
+    booking_id = input("Enter Booking ID to cancel: ")
+
+    if booking_id in bookings:
+        seat = bookings[booking_id]["seat"]
+
+        available_seats.append(seat)
+        available_seats.sort()
+
+        del bookings[booking_id]
+
+        print("Ticket Cancelled Successfully!")
+    else:
+        print("Invalid Booking ID!")
+
 def menu():
     while True:
         print("\n===== Railway Reservation System =====")
@@ -59,7 +74,7 @@ def menu():
         elif choice == "3":
             view_ticket()
         elif choice == "4":
-            print("Coming soon...")
+            cancel_ticket()
         elif choice == "5":
             print("Goodbye!")
             break
