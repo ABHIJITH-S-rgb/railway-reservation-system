@@ -1,3 +1,7 @@
+TOTAL_SEATS = 50
+available_seats = list(range(1, TOTAL_SEATS + 1))
+bookings = {}
+
 def menu():
     while True:
         print("\n===== Railway Reservation System =====")
