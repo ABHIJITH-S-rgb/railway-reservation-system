@@ -29,6 +29,18 @@ def book_ticket():
     print("Booking ID:", booking_id)
     print("Seat Number:", seat)
 
+def view_ticket():
+    booking_id = input("Enter Booking ID: ")
+
+    if booking_id in bookings:
+        data = bookings[booking_id]
+        print("\nTicket Details")
+        print("Name:", data["name"])
+        print("Age:", data["age"])
+        print("Seat:", data["seat"])
+    else:
+        print("Booking not found!")
+
 def menu():
     while True:
         print("\n===== Railway Reservation System =====")
@@ -45,7 +57,7 @@ def menu():
         elif choice == "2":
             book_ticket()
         elif choice == "3":
-            print("Coming soon...")
+            view_ticket()
         elif choice == "4":
             print("Coming soon...")
         elif choice == "5":
